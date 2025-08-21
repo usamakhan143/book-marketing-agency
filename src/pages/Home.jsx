@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import {
   BookOpen,
@@ -136,16 +137,16 @@ const Home = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
                 >
-                  <button className="btn-primary text-lg px-8 py-4 group">
+                  <Link to="/contact" className="btn-primary text-lg px-8 py-4 group">
                     <Rocket className="w-5 h-5 mr-2 group-hover:animate-pulse" />
                     Launch My Campaign
                     <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                  </button>
+                  </Link>
 
-                  <button className="btn-ghost group">
+                  <Link to="/contact" className="btn-ghost group">
                     <Mail className="w-5 h-5 mr-2" />
                     Free Consultation
-                  </button>
+                  </Link>
                 </motion.div>
 
                 {/* Trust Indicators */}
@@ -887,10 +888,10 @@ const Home = () => {
               viewport={{ once: true }}
             >
               <p className="text-gray-600 mb-4">Need a custom solution? We've got you covered.</p>
-              <button className="btn-secondary">
+              <Link to="/contact" className="btn-secondary">
                 <MessageSquare className="w-5 h-5 mr-2" />
                 Schedule Custom Consultation
-              </button>
+              </Link>
             </motion.div>
           </div>
         </section>
@@ -959,10 +960,10 @@ const Home = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <button className="btn-secondary">
+              <Link to="/faq" className="btn-secondary">
                 View All FAQs
                 <ChevronRight className="w-5 h-5 ml-2" />
-              </button>
+              </Link>
             </motion.div>
           </div>
         </section>
@@ -1004,14 +1005,14 @@ const Home = () => {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <button className="btn-primary">
+                  <Link to="/contact" className="btn-primary">
                     <MessageSquare className="w-5 h-5 mr-2" />
                     Schedule Free Consultation
-                  </button>
-                  <button className="btn-secondary">
+                  </Link>
+                  <Link to="/services" className="btn-secondary">
                     <Users className="w-5 h-5 mr-2" />
                     View Our Process
-                  </button>
+                  </Link>
                 </div>
               </motion.div>
 
@@ -1187,24 +1188,26 @@ const Home = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
-                <motion.button 
-                  className="btn-primary text-xl px-12 py-5 group"
+                <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Sparkles className="w-6 h-6 mr-3 group-hover:animate-pulse" />
-                  Start My Success Story
-                  <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-1 transition-transform" />
-                </motion.button>
-                
-                <motion.button
-                  className="btn-ghost text-xl px-12 py-5 group"
+                  <Link to="/contact" className="btn-primary text-xl px-12 py-5 group">
+                    <Sparkles className="w-6 h-6 mr-3 group-hover:animate-pulse" />
+                    Start My Success Story
+                    <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </motion.div>
+
+                <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <MessageSquare className="w-6 h-6 mr-3" />
-                  Schedule Consultation
-                </motion.button>
+                  <Link to="/contact" className="btn-ghost text-xl px-12 py-5 group">
+                    <MessageSquare className="w-6 h-6 mr-3" />
+                    Schedule Consultation
+                  </Link>
+                </motion.div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">

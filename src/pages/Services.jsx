@@ -1,4 +1,23 @@
 import SEO from '../components/SEO';
+import { Link } from 'react-router-dom';
+import {
+  BookOpen,
+  Smartphone,
+  Mail,
+  Megaphone,
+  Search,
+  Target,
+  Home,
+  ChevronRight,
+  Facebook,
+  Instagram,
+  Twitter,
+  Music,
+  Linkedin,
+  Bookmark,
+  TrendingUp,
+  CheckCircle
+} from 'lucide-react';
 
 const Services = () => {
   return (
@@ -12,26 +31,34 @@ const Services = () => {
       
       <div className="min-h-screen">
         {/* Hero Section */}
-        <section className="gradient-bg text-white section-padding relative overflow-hidden">
+        <section className="relative section-padding overflow-hidden min-h-[400px] lg:min-h-[500px]">
           {/* Background Image */}
-          <div className="absolute inset-0 opacity-15">
+          <div className="absolute inset-0">
             <img
-              src="https://images.pexels.com/photos/6373291/pexels-photo-6373291.jpeg?auto=compress&cs=tinysrgb&w=1200"
-              alt="Professional book marketing and design template"
-              className="w-full h-full object-cover"
+              src="https://images.pexels.com/photos/5716037/pexels-photo-5716037.jpeg?auto=compress&cs=tinysrgb&w=1600"
+              alt="Successful business team celebrating achievements with financial growth charts"
+              className="w-full h-full object-cover object-center"
             />
-            <div className="absolute inset-0 bg-gradient-to-br from-navy-900/85 to-navy-700/85"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-navy-900/90 via-navy-800/85 to-navy-700/90"></div>
           </div>
 
-          <div className="container-custom relative z-10">
+          <div className="container-custom relative z-10 flex items-center justify-center min-h-[400px] lg:min-h-[500px]">
             <div className="text-center max-w-4xl mx-auto">
-              <h1 className="text-4xl md:text-5xl font-serif font-bold mb-6">
-                Complete Book Marketing Services
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold mb-6 text-white">
+                Our Services
               </h1>
-              <p className="text-xl text-gray-300">
+              <p className="text-xl lg:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed">
                 From Amazon optimization to social media campaigns, we provide everything you need
                 to get your book discovered by the right readers.
               </p>
+
+              {/* Breadcrumb Navigation */}
+              <nav className="flex items-center justify-center space-x-2 text-gray-300">
+                <Home className="w-5 h-5" />
+                <span className="text-base font-medium">Home</span>
+                <ChevronRight className="w-5 h-5" />
+                <span className="text-base text-white font-semibold">Services</span>
+              </nav>
             </div>
           </div>
         </section>
@@ -45,8 +72,8 @@ const Services = () => {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
                   <div className="flex items-center mb-6">
-                    <div className="w-16 h-16 bg-gold-500 rounded-xl mr-4 flex items-center justify-center">
-                      <span className="text-white text-3xl">📚</span>
+                    <div className="w-16 h-16 bg-gold-500 rounded-xl mr-4 flex items-center justify-center shadow-lg">
+                      <BookOpen className="w-8 h-8 text-white" />
                     </div>
                     <h2 className="text-3xl font-serif font-bold text-navy-900">
                       Amazon Ads & Optimization
@@ -110,27 +137,27 @@ const Services = () => {
                     <h3 className="text-xl font-semibold text-navy-900 mb-4">Platform Coverage:</h3>
                     <div className="grid grid-cols-2 gap-4 text-gray-700">
                       <div className="flex items-center">
-                        <span className="text-navy-600 mr-2">📘</span>
+                        <Facebook className="w-5 h-5 text-navy-600 mr-2" />
                         Facebook
                       </div>
                       <div className="flex items-center">
-                        <span className="text-navy-600 mr-2">📸</span>
+                        <Instagram className="w-5 h-5 text-navy-600 mr-2" />
                         Instagram
                       </div>
                       <div className="flex items-center">
-                        <span className="text-navy-600 mr-2">🐦</span>
+                        <Twitter className="w-5 h-5 text-navy-600 mr-2" />
                         Twitter/X
                       </div>
                       <div className="flex items-center">
-                        <span className="text-navy-600 mr-2">🎵</span>
+                        <Music className="w-5 h-5 text-navy-600 mr-2" />
                         TikTok
                       </div>
                       <div className="flex items-center">
-                        <span className="text-navy-600 mr-2">💼</span>
+                        <Linkedin className="w-5 h-5 text-navy-600 mr-2" />
                         LinkedIn
                       </div>
                       <div className="flex items-center">
-                        <span className="text-navy-600 mr-2">📌</span>
+                        <Bookmark className="w-5 h-5 text-navy-600 mr-2" />
                         Pinterest
                       </div>
                     </div>
@@ -138,8 +165,8 @@ const Services = () => {
                 </div>
                 <div className="order-1 lg:order-2">
                   <div className="flex items-center mb-6">
-                    <div className="w-16 h-16 bg-navy-700 rounded-xl mr-4 flex items-center justify-center">
-                      <span className="text-gold-500 text-3xl">📱</span>
+                    <div className="w-16 h-16 bg-navy-700 rounded-xl mr-4 flex items-center justify-center shadow-lg">
+                      <Smartphone className="w-8 h-8 text-gold-500" />
                     </div>
                     <h2 className="text-3xl font-serif font-bold text-navy-900">
                       Social Media Marketing
@@ -178,8 +205,8 @@ const Services = () => {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
                   <div className="flex items-center mb-6">
-                    <div className="w-16 h-16 bg-gold-500 rounded-xl mr-4 flex items-center justify-center">
-                      <span className="text-white text-3xl">📧</span>
+                    <div className="w-16 h-16 bg-gold-500 rounded-xl mr-4 flex items-center justify-center shadow-lg">
+                      <Mail className="w-8 h-8 text-white" />
                     </div>
                     <h2 className="text-3xl font-serif font-bold text-navy-900">
                       Email Marketing for Reader Engagement
@@ -241,19 +268,37 @@ const Services = () => {
                   <div className="card p-8 bg-gradient-to-br from-navy-50 to-navy-100">
                     <h3 className="text-xl font-semibold text-navy-900 mb-4">Media Outlets We Work With:</h3>
                     <div className="space-y-3 text-gray-700">
-                      <div>📰 National newspapers and magazines</div>
-                      <div>📻 Podcast networks and radio shows</div>
-                      <div>📺 Online publications and blogs</div>
-                      <div>🎙️ Author interview platforms</div>
-                      <div>📖 Book review websites</div>
-                      <div>🌐 Industry publications</div>
+                      <div className="flex items-center">
+                        <CheckCircle className="w-4 h-4 text-navy-600 mr-2" />
+                        National newspapers and magazines
+                      </div>
+                      <div className="flex items-center">
+                        <CheckCircle className="w-4 h-4 text-navy-600 mr-2" />
+                        Podcast networks and radio shows
+                      </div>
+                      <div className="flex items-center">
+                        <CheckCircle className="w-4 h-4 text-navy-600 mr-2" />
+                        Online publications and blogs
+                      </div>
+                      <div className="flex items-center">
+                        <CheckCircle className="w-4 h-4 text-navy-600 mr-2" />
+                        Author interview platforms
+                      </div>
+                      <div className="flex items-center">
+                        <CheckCircle className="w-4 h-4 text-navy-600 mr-2" />
+                        Book review websites
+                      </div>
+                      <div className="flex items-center">
+                        <CheckCircle className="w-4 h-4 text-navy-600 mr-2" />
+                        Industry publications
+                      </div>
                     </div>
                   </div>
                 </div>
                 <div className="order-1 lg:order-2">
                   <div className="flex items-center mb-6">
-                    <div className="w-16 h-16 bg-navy-700 rounded-xl mr-4 flex items-center justify-center">
-                      <span className="text-gold-500 text-3xl">📢</span>
+                    <div className="w-16 h-16 bg-navy-700 rounded-xl mr-4 flex items-center justify-center shadow-lg">
+                      <Megaphone className="w-8 h-8 text-gold-500" />
                     </div>
                     <h2 className="text-3xl font-serif font-bold text-navy-900">
                       Press Release & PR Campaigns
@@ -292,8 +337,8 @@ const Services = () => {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
                   <div className="flex items-center mb-6">
-                    <div className="w-16 h-16 bg-gold-500 rounded-xl mr-4 flex items-center justify-center">
-                      <span className="text-white text-3xl">🔍</span>
+                    <div className="w-16 h-16 bg-gold-500 rounded-xl mr-4 flex items-center justify-center shadow-lg">
+                      <Search className="w-8 h-8 text-white" />
                     </div>
                     <h2 className="text-3xl font-serif font-bold text-navy-900">
                       SEO & Website Optimization
@@ -331,25 +376,25 @@ const Services = () => {
                   <div className="space-y-4 text-gray-700">
                     <div className="flex items-center">
                       <div className="w-8 h-8 bg-gold-500 rounded-full mr-3 flex items-center justify-center">
-                        <span className="text-white text-sm">↗️</span>
+                        <TrendingUp className="w-4 h-4 text-white" />
                       </div>
                       <span>Increased organic website traffic</span>
                     </div>
                     <div className="flex items-center">
                       <div className="w-8 h-8 bg-gold-500 rounded-full mr-3 flex items-center justify-center">
-                        <span className="text-white text-sm">🎯</span>
+                        <Target className="w-4 h-4 text-white" />
                       </div>
                       <span>Better reader targeting</span>
                     </div>
                     <div className="flex items-center">
                       <div className="w-8 h-8 bg-gold-500 rounded-full mr-3 flex items-center justify-center">
-                        <span className="text-white text-sm">📈</span>
+                        <TrendingUp className="w-4 h-4 text-white" />
                       </div>
                       <span>Higher search rankings</span>
                     </div>
                     <div className="flex items-center">
                       <div className="w-8 h-8 bg-gold-500 rounded-full mr-3 flex items-center justify-center">
-                        <span className="text-white text-sm">💰</span>
+                        <CheckCircle className="w-4 h-4 text-white" />
                       </div>
                       <span>Long-term cost-effective growth</span>
                     </div>
@@ -384,8 +429,8 @@ const Services = () => {
                 </div>
                 <div className="order-1 lg:order-2">
                   <div className="flex items-center mb-6">
-                    <div className="w-16 h-16 bg-navy-700 rounded-xl mr-4 flex items-center justify-center">
-                      <span className="text-gold-500 text-3xl">🎯</span>
+                    <div className="w-16 h-16 bg-navy-700 rounded-xl mr-4 flex items-center justify-center shadow-lg">
+                      <Target className="w-8 h-8 text-gold-500" />
                     </div>
                     <h2 className="text-3xl font-serif font-bold text-navy-900">
                       Paid Ad Campaigns
@@ -434,12 +479,12 @@ const Services = () => {
               Let's create a custom marketing strategy that fits your book, budget, and goals.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="btn-primary text-lg px-12 py-4">
+              <Link to="/contact" className="btn-primary text-lg px-12 py-4">
                 Get Your Marketing Plan
-              </button>
-              <button className="btn-outline text-lg px-12 py-4">
+              </Link>
+              <Link to="/pricing" className="btn-outline text-lg px-12 py-4">
                 View Our Pricing
-              </button>
+              </Link>
             </div>
           </div>
         </section>

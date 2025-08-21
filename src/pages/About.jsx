@@ -1,4 +1,5 @@
 import SEO from '../components/SEO';
+import { Link } from 'react-router-dom';
 import { Target, Rocket, Gem, Search, TrendingUp, Home, ChevronRight } from 'lucide-react';
 
 const About = () => {
@@ -234,9 +235,9 @@ const About = () => {
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
               Let's discuss how we can help you reach more readers and achieve your publishing goals.
             </p>
-            <button className="btn-primary text-lg px-12 py-4">
+            <Link to="/contact" className="btn-primary text-lg px-12 py-4">
               Schedule a Free Consultation
-            </button>
+            </Link>
           </div>
         </section>
       </div>
