@@ -78,7 +78,7 @@ const Home = () => {
       <div className="min-h-screen">
         
         {/* 1. Enhanced Hero Section */}
-        <section className="hero-gradient text-white min-h-screen flex items-center relative overflow-hidden dark-section">
+        <section className="hero-gradient text-white min-h-screen flex items-center relative overflow-hidden dark-section pt-16 md:pt-0">
           {/* Animated Background Elements */}
           <div className="absolute inset-0">
             <div className="absolute top-20 left-10 w-32 h-32 bg-gold-500/20 rounded-full blur-xl opacity-40"></div>
@@ -158,8 +158,14 @@ const Home = () => {
                 >
                   <div className="flex items-center space-x-2">
                     <div className="flex -space-x-2">
-                      {[1,2,3,4,5].map((i) => (
-                        <div key={i} className="w-8 h-8 bg-gradient-to-br from-gold-400 to-gold-600 rounded-full border-2 border-white" />
+                      {[
+                        'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=100',
+                        'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=100',
+                        'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=100',
+                        'https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=100',
+                        'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=100'
+                      ].map((img, i) => (
+                        <img key={i} src={img} alt={`Happy author ${i + 1}`} className="w-8 h-8 rounded-full border-2 border-white object-cover" />
                       ))}
                     </div>
                     <span className="text-sm text-gray-300">500+ Happy Authors</span>
@@ -178,50 +184,52 @@ const Home = () => {
 
               {/* Hero Banner Image */}
               <motion.div
-                className="relative"
+                className="relative flex justify-center lg:justify-end mb-8 lg:mb-0"
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 1, delay: 0.3 }}
               >
-                <div className="relative overflow-hidden rounded-3xl shadow-2xl">
-                  <img
-                    src="https://images.pexels.com/photos/9159067/pexels-photo-9159067.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                    alt="Successful author working with books and laptop"
-                    className="w-full h-80 lg:h-96 object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-tr from-navy-900/60 via-navy-800/40 to-transparent"></div>
+                <div className="relative pr-8 pt-8">
+                  <div className="relative rounded-3xl shadow-2xl overflow-hidden">
+                    <img
+                      src="https://images.pexels.com/photos/9159067/pexels-photo-9159067.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                      alt="Successful author working with books and laptop"
+                      className="w-full h-80 lg:h-96 object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-tr from-navy-900/60 via-navy-800/40 to-transparent"></div>
 
-                  {/* Overlay Stats */}
-                  <div className="absolute bottom-6 left-6 right-6">
-                    <div className="bg-white/95 backdrop-blur-md rounded-2xl p-6 shadow-xl">
-                      <div className="grid grid-cols-3 gap-4 text-center">
-                        <div>
-                          <div className="text-2xl font-bold text-navy-900 flex items-center justify-center">
-                            <TrendingUp className="w-5 h-5 mr-1 text-gold-500" />
-                            342%
+                    {/* Overlay Stats */}
+                    <div className="absolute bottom-6 left-6 right-6">
+                      <div className="bg-white/95 backdrop-blur-md rounded-2xl p-6 shadow-xl">
+                        <div className="grid grid-cols-3 gap-4 text-center">
+                          <div>
+                            <div className="text-2xl font-bold text-navy-900 flex items-center justify-center">
+                              <TrendingUp className="w-5 h-5 mr-1 text-gold-500" />
+                              342%
+                            </div>
+                            <div className="text-sm text-gray-600">Sales Growth</div>
                           </div>
-                          <div className="text-sm text-gray-600">Sales Growth</div>
-                        </div>
-                        <div>
-                          <div className="text-2xl font-bold text-navy-900 flex items-center justify-center">
-                            <Users className="w-5 h-5 mr-1 text-blue-500" />
-                            2.5M+
+                          <div>
+                            <div className="text-2xl font-bold text-navy-900 flex items-center justify-center">
+                              <Users className="w-5 h-5 mr-1 text-blue-500" />
+                              2.5M+
+                            </div>
+                            <div className="text-sm text-gray-600">Readers Reached</div>
                           </div>
-                          <div className="text-sm text-gray-600">Readers Reached</div>
-                        </div>
-                        <div>
-                          <div className="text-2xl font-bold text-navy-900 flex items-center justify-center">
-                            <Target className="w-5 h-5 mr-1 text-green-500" />
-                            89%
+                          <div>
+                            <div className="text-2xl font-bold text-navy-900 flex items-center justify-center">
+                              <Target className="w-5 h-5 mr-1 text-green-500" />
+                              89%
+                            </div>
+                            <div className="text-sm text-gray-600">Success Rate</div>
                           </div>
-                          <div className="text-sm text-gray-600">Success Rate</div>
                         </div>
                       </div>
                     </div>
                   </div>
 
                   {/* Achievement Badge */}
-                  <div className="absolute -top-4 -right-4 w-16 h-16 bg-gold-500 rounded-2xl flex items-center justify-center shadow-xl">
+                  <div className="absolute top-4 right-4 w-16 h-16 bg-gold-500 rounded-2xl flex items-center justify-center shadow-xl z-10">
                     <Award className="w-8 h-8 text-white" />
                   </div>
                 </div>

@@ -164,33 +164,50 @@ const CaseStudies = () => {
 
                 <div className="card p-8 bg-gradient-to-br from-pink-50 to-red-50 h-full">
                   <h4 className="text-xl font-bold text-navy-900 mb-6">Campaign Strategy</h4>
-                  <div className="space-y-4">
+                  <div className="space-y-5">
                     <div className="flex items-start">
                       <Target className="w-5 h-5 text-gold-500 mt-1 mr-3" />
                       <div>
                         <h5 className="font-semibold text-navy-900">Targeted Amazon Ads</h5>
-                        <p className="text-sm text-gray-600">Focused on romance keywords and competitor targeting with sophisticated keyword research and bid optimization</p>
+                        <p className="text-sm text-gray-600 mb-2">Focused on romance keywords and competitor targeting with sophisticated keyword research and bid optimization</p>
+                        <p className="text-xs text-gray-500">Campaign spent $2,400 with 4.2x ROAS over 4 months</p>
                       </div>
                     </div>
                     <div className="flex items-start">
                       <Users className="w-5 h-5 text-gold-500 mt-1 mr-3" />
                       <div>
                         <h5 className="font-semibold text-navy-900">Reader Magnet Campaign</h5>
-                        <p className="text-sm text-gray-600">Free novella strategy to build email list rapidly and create a sustainable reader funnel for future releases</p>
+                        <p className="text-sm text-gray-600 mb-2">Free novella strategy to build email list rapidly and create a sustainable reader funnel for future releases</p>
+                        <p className="text-xs text-gray-500">Generated 2,750 new subscribers with 23% conversion rate</p>
                       </div>
                     </div>
                     <div className="flex items-start">
                       <Star className="w-5 h-5 text-gold-500 mt-1 mr-3" />
                       <div>
                         <h5 className="font-semibold text-navy-900">Review Strategy</h5>
-                        <p className="text-sm text-gray-600">Coordinated launch with beta readers and ARC team to generate authentic early reviews and social proof</p>
+                        <p className="text-sm text-gray-600 mb-2">Coordinated launch with beta readers and ARC team to generate authentic early reviews and social proof</p>
+                        <p className="text-xs text-gray-500">Secured 47 verified reviews averaging 4.6 stars within first month</p>
                       </div>
                     </div>
                     <div className="flex items-start">
                       <BookOpen className="w-5 h-5 text-gold-500 mt-1 mr-3" />
                       <div>
                         <h5 className="font-semibold text-navy-900">Genre Positioning</h5>
-                        <p className="text-sm text-gray-600">Strategic category selection and romance sub-genre targeting to maximize visibility and discoverability</p>
+                        <p className="text-sm text-gray-600 mb-2">Strategic category selection and romance sub-genre targeting to maximize visibility and discoverability</p>
+                        <p className="text-xs text-gray-500">Achieved #1 ranking in Contemporary Romance within 6 weeks</p>
+                      </div>
+                    </div>
+                    <div className="mt-6 p-4 bg-white/70 rounded-lg">
+                      <h6 className="font-semibold text-navy-900 text-sm mb-2">Campaign Investment vs. Returns</h6>
+                      <div className="grid grid-cols-2 gap-3 text-xs">
+                        <div>
+                          <span className="text-gray-500">Total Investment:</span>
+                          <div className="font-semibold text-navy-900">$4,200</div>
+                        </div>
+                        <div>
+                          <span className="text-gray-500">Revenue Generated:</span>
+                          <div className="font-semibold text-green-600">$18,900</div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -202,46 +219,78 @@ const CaseStudies = () => {
                 <div className="order-2 lg:order-1 h-full">
                   <div className="card p-8 bg-gradient-to-br from-blue-50 to-indigo-50 h-full">
                     <h4 className="text-xl font-bold text-navy-900 mb-6">Timeline & Results</h4>
-                    <div className="space-y-4">
-                      <div className="flex items-center">
-                        <Calendar className="w-5 h-5 text-gold-500 mr-3" />
+                    <div className="space-y-5">
+                      <div className="flex items-start">
+                        <Calendar className="w-5 h-5 text-gold-500 mr-3 mt-1" />
                         <div className="flex-1">
-                          <div className="flex justify-between">
+                          <div className="flex justify-between mb-2">
                             <span className="font-medium">Month 1-2</span>
                             <span className="text-sm text-gray-600">Foundation</span>
                           </div>
-                          <div className="text-sm text-gray-600">Website optimization, Amazon setup, and comprehensive market analysis</div>
+                          <div className="text-sm text-gray-600 mb-2">Website optimization, Amazon setup, and comprehensive market analysis</div>
+                          <div className="text-xs text-gray-500 bg-white/60 p-2 rounded">
+                            <strong>Key Metrics:</strong> Completed competitor analysis of 47 thriller titles, optimized 12 marketing touchpoints
+                          </div>
                         </div>
                       </div>
-                      <div className="flex items-center">
-                        <BarChart3 className="w-5 h-5 text-gold-500 mr-3" />
+
+                      <div className="flex items-start">
+                        <BarChart3 className="w-5 h-5 text-gold-500 mr-3 mt-1" />
                         <div className="flex-1">
-                          <div className="flex justify-between">
+                          <div className="flex justify-between mb-2">
                             <span className="font-medium">Month 3-4</span>
                             <span className="text-sm text-gray-600">Launch</span>
                           </div>
-                          <div className="text-sm text-gray-600">Multi-platform ad campaigns, targeted PR outreach, and influencer partnerships</div>
+                          <div className="text-sm text-gray-600 mb-2">Multi-platform ad campaigns, targeted PR outreach, and influencer partnerships</div>
+                          <div className="text-xs text-gray-500 bg-white/60 p-2 rounded">
+                            <strong>Breakthrough:</strong> Amazon ads generated 4.3x ROAS, social media reach increased by 890%
+                          </div>
                         </div>
                       </div>
-                      <div className="flex items-center">
-                        <Award className="w-5 h-5 text-gold-500 mr-3" />
+
+                      <div className="flex items-start">
+                        <Award className="w-5 h-5 text-gold-500 mr-3 mt-1" />
                         <div className="flex-1">
-                          <div className="flex justify-between">
+                          <div className="flex justify-between mb-2">
                             <span className="font-medium">Month 5-6</span>
                             <span className="text-sm text-gray-600">Scale</span>
                           </div>
-                          <div className="text-sm text-gray-600">Bestseller status achieved and sustainable marketing momentum established</div>
+                          <div className="text-sm text-gray-600 mb-2">Bestseller status achieved and sustainable marketing momentum established</div>
+                          <div className="text-xs text-gray-500 bg-white/60 p-2 rounded">
+                            <strong>Milestone:</strong> Reached #3 on Amazon Thriller charts, maintained top 10 for 3 consecutive weeks
+                          </div>
                         </div>
                       </div>
-                      <div className="flex items-center">
-                        <TrendingUp className="w-5 h-5 text-gold-500 mr-3" />
+
+                      <div className="flex items-start">
+                        <TrendingUp className="w-5 h-5 text-gold-500 mr-3 mt-1" />
                         <div className="flex-1">
-                          <div className="flex justify-between">
+                          <div className="flex justify-between mb-2">
                             <span className="font-medium">Month 7+</span>
                             <span className="text-sm text-gray-600">Growth</span>
                           </div>
-                          <div className="text-sm text-gray-600">Continued optimization and preparation for sequel marketing campaigns</div>
+                          <div className="text-sm text-gray-600 mb-2">Continued optimization and preparation for sequel marketing campaigns</div>
+                          <div className="text-xs text-gray-500 bg-white/60 p-2 rounded">
+                            <strong>Ongoing Success:</strong> Book 2 pre-orders opened with 1,200+ copies in first week
+                          </div>
                         </div>
+                      </div>
+                    </div>
+
+                    <div className="mt-8 p-4 bg-gradient-to-r from-blue-100 to-indigo-100 rounded-lg">
+                      <h6 className="font-semibold text-navy-900 text-sm mb-2">Investment vs. Returns</h6>
+                      <div className="grid grid-cols-2 gap-3 text-xs">
+                        <div>
+                          <span className="text-gray-500">Marketing Investment:</span>
+                          <div className="font-semibold text-navy-900">$3,800</div>
+                        </div>
+                        <div>
+                          <span className="text-gray-500">Revenue Generated:</span>
+                          <div className="font-semibold text-green-600">$24,200</div>
+                        </div>
+                      </div>
+                      <div className="mt-2 text-xs text-gray-600">
+                        <strong>ROI:</strong> 537% return on marketing investment over 6 months
                       </div>
                     </div>
                   </div>
@@ -279,7 +328,7 @@ const CaseStudies = () => {
                     </div>
                   </div>
 
-                  <div className="space-y-3">
+                  <div className="space-y-3 mb-6">
                     <div className="flex items-center">
                       <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
                       <span className="text-gray-700">Featured in 8 major book blogs and podcasts</span>
@@ -295,6 +344,16 @@ const CaseStudies = () => {
                     <div className="flex items-center">
                       <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
                       <span className="text-gray-700">Established author platform with 5,000+ followers</span>
+                    </div>
+                  </div>
+
+                  <div className="bg-blue-50 p-4 rounded-lg">
+                    <h6 className="font-semibold text-navy-900 text-sm mb-3">What Marcus Says Now:</h6>
+                    <p className="text-sm text-gray-600 italic mb-3">
+                      "The thriller market felt impossible to crack until Author Glide showed me the data. They didn't just run ads—they helped me understand my readers' behavior, when they're most active, and what makes them click 'buy.'"
+                    </p>
+                    <div className="text-xs text-gray-500">
+                      <strong>Current Status:</strong> Working on book 3 in the series with pre-orders already at 1,200+ copies
                     </div>
                   </div>
                 </div>
@@ -371,7 +430,30 @@ const CaseStudies = () => {
                     </div>
                     <div className="border-l-4 border-gold-500 pl-4">
                       <h5 className="font-semibold text-navy-900">Revenue Diversification</h5>
-                      <p className="text-sm text-gray-600">Multiple income streams including audiobooks, merchandise, and premium reader experiences</p>
+                      <p className="text-sm text-gray-600 mb-2">Multiple income streams including audiobooks, merchandise, and premium reader experiences</p>
+                      <p className="text-xs text-gray-500">Audiobook sales now represent 35% of total revenue</p>
+                    </div>
+                    <div className="border-l-4 border-gold-500 pl-4">
+                      <h5 className="font-semibold text-navy-900">International Expansion</h5>
+                      <p className="text-sm text-gray-600 mb-2">Expanded to UK, Australian, and Canadian markets with localized marketing approaches</p>
+                      <p className="text-xs text-gray-500">International sales now account for 28% of total revenue</p>
+                    </div>
+                    <div className="mt-4 p-3 bg-white/70 rounded-lg">
+                      <h6 className="font-semibold text-navy-900 text-xs mb-2">18-Month Journey Snapshot</h6>
+                      <div className="grid grid-cols-3 gap-2 text-xs">
+                        <div className="text-center">
+                          <div className="font-bold text-purple-600">Month 1</div>
+                          <div className="text-gray-600">$380/month</div>
+                        </div>
+                        <div className="text-center">
+                          <div className="font-bold text-purple-600">Month 12</div>
+                          <div className="text-gray-600">$4,200/month</div>
+                        </div>
+                        <div className="text-center">
+                          <div className="font-bold text-purple-600">Month 18</div>
+                          <div className="text-gray-600">$7,100/month</div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
