@@ -1,4 +1,5 @@
 import SEO from '../components/SEO';
+import { Target, Rocket, Gem, Search, TrendingUp, Home, ChevronRight } from 'lucide-react';
 
 const About = () => {
   return (
@@ -12,16 +13,34 @@ const About = () => {
       
       <div className="min-h-screen">
         {/* Hero Section */}
-        <section className="gradient-bg text-white section-padding">
-          <div className="container-custom">
+        <section className="relative section-padding overflow-hidden min-h-[400px] lg:min-h-[500px]">
+          {/* Background Image */}
+          <div className="absolute inset-0">
+            <img
+              src="https://images.pexels.com/photos/269077/pexels-photo-269077.jpeg?auto=compress&cs=tinysrgb&w=1600"
+              alt="Modern professional office building with glass facade"
+              className="w-full h-full object-cover object-center"
+            />
+            <div className="absolute inset-0 bg-gradient-to-br from-navy-900/90 via-navy-800/85 to-navy-700/90"></div>
+          </div>
+
+          <div className="container-custom relative z-10 flex items-center justify-center min-h-[400px] lg:min-h-[500px]">
             <div className="text-center max-w-4xl mx-auto">
-              <h1 className="text-4xl md:text-5xl font-serif font-bold mb-6">
-                Empowering Authors to Reach Their Dreams
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold mb-6 text-white">
+                About Us
               </h1>
-              <p className="text-xl text-gray-300">
-                We believe every author deserves the chance to connect with their ideal readers. 
+              <p className="text-xl lg:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed">
+                We believe every author deserves the chance to connect with their ideal readers.
                 That's why we've dedicated ourselves to making professional book marketing accessible and effective.
               </p>
+
+              {/* Breadcrumb Navigation */}
+              <nav className="flex items-center justify-center space-x-2 text-gray-300">
+                <Home className="w-5 h-5" />
+                <span className="text-base font-medium">Home</span>
+                <ChevronRight className="w-5 h-5" />
+                <span className="text-base text-white font-semibold">About Us</span>
+              </nav>
             </div>
           </div>
         </section>
@@ -70,22 +89,22 @@ const About = () => {
           <div className="container-custom">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div className="text-center">
-                <div className="w-16 h-16 bg-gold-500 rounded-xl mx-auto mb-6 flex items-center justify-center">
-                  <span className="text-white text-2xl">🎯</span>
+                <div className="w-16 h-16 bg-gold-500 rounded-xl mx-auto mb-6 flex items-center justify-center shadow-lg">
+                  <Target className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-2xl font-serif font-bold text-navy-900 mb-4">Our Mission</h3>
                 <p className="text-gray-600 text-lg">
-                  To democratize book marketing by providing independent authors with the same level of professional 
+                  To democratize book marketing by providing independent authors with the same level of professional
                   marketing support that traditional publishers offer their bestselling authors.
                 </p>
               </div>
               <div className="text-center">
-                <div className="w-16 h-16 bg-navy-700 rounded-xl mx-auto mb-6 flex items-center justify-center">
-                  <span className="text-gold-500 text-2xl">🚀</span>
+                <div className="w-16 h-16 bg-navy-700 rounded-xl mx-auto mb-6 flex items-center justify-center shadow-lg">
+                  <Rocket className="w-8 h-8 text-gold-500" />
                 </div>
                 <h3 className="text-2xl font-serif font-bold text-navy-900 mb-4">Our Vision</h3>
                 <p className="text-gray-600 text-lg">
-                  A world where every great story finds its audience, where talented authors can focus on writing 
+                  A world where every great story finds its audience, where talented authors can focus on writing
                   while we handle the complexities of modern book marketing.
                 </p>
               </div>
@@ -106,35 +125,35 @@ const About = () => {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="text-center card p-8">
-                <div className="w-20 h-20 bg-gradient-to-br from-gold-400 to-gold-600 rounded-full mx-auto mb-6 flex items-center justify-center">
-                  <span className="text-white text-3xl">💎</span>
+              <div className="text-center card p-8 hover-lift">
+                <div className="w-20 h-20 bg-gradient-to-br from-gold-400 to-gold-600 rounded-full mx-auto mb-6 flex items-center justify-center shadow-xl">
+                  <Gem className="w-10 h-10 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold text-navy-900 mb-4">Integrity</h3>
                 <p className="text-gray-600">
-                  We believe in honest communication, transparent pricing, and ethical marketing practices. 
+                  We believe in honest communication, transparent pricing, and ethical marketing practices.
                   Your success is our success, and we're committed to earning your trust every day.
                 </p>
               </div>
-              
-              <div className="text-center card p-8">
-                <div className="w-20 h-20 bg-gradient-to-br from-navy-600 to-navy-800 rounded-full mx-auto mb-6 flex items-center justify-center">
-                  <span className="text-gold-500 text-3xl">🔍</span>
+
+              <div className="text-center card p-8 hover-lift">
+                <div className="w-20 h-20 bg-gradient-to-br from-navy-600 to-navy-800 rounded-full mx-auto mb-6 flex items-center justify-center shadow-xl">
+                  <Search className="w-10 h-10 text-gold-500" />
                 </div>
                 <h3 className="text-xl font-semibold text-navy-900 mb-4">Transparency</h3>
                 <p className="text-gray-600">
-                  No hidden fees, no confusing jargon, no mysterious "black box" strategies. 
+                  No hidden fees, no confusing jargon, no mysterious "black box" strategies.
                   We explain what we're doing, why we're doing it, and how it's performing.
                 </p>
               </div>
-              
-              <div className="text-center card p-8">
-                <div className="w-20 h-20 bg-gradient-to-br from-gold-400 to-gold-600 rounded-full mx-auto mb-6 flex items-center justify-center">
-                  <span className="text-white text-3xl">📈</span>
+
+              <div className="text-center card p-8 hover-lift">
+                <div className="w-20 h-20 bg-gradient-to-br from-gold-400 to-gold-600 rounded-full mx-auto mb-6 flex items-center justify-center shadow-xl">
+                  <TrendingUp className="w-10 h-10 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold text-navy-900 mb-4">Results-Driven</h3>
                 <p className="text-gray-600">
-                  We measure our success by your success. Every strategy we implement is designed to deliver 
+                  We measure our success by your success. Every strategy we implement is designed to deliver
                   measurable improvements in your book's visibility and sales.
                 </p>
               </div>
