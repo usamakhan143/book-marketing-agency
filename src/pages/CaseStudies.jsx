@@ -31,9 +31,9 @@ const CaseStudies = () => {
         <section className="relative section-padding overflow-hidden min-h-[400px] lg:min-h-[500px]">
           {/* Background Image */}
           <div className="absolute inset-0">
-            <img 
-              src="https://images.pexels.com/photos/5716037/pexels-photo-5716037.jpeg?auto=compress&cs=tinysrgb&w=1600" 
-              alt="Successful business team celebrating achievements with financial growth charts"
+            <img
+              src="https://images.pexels.com/photos/5716001/pexels-photo-5716001.jpeg?auto=compress&cs=tinysrgb&w=1600"
+              alt="Business professionals discussing data charts and graphs in modern office setting"
               className="w-full h-full object-cover object-center"
             />
             <div className="absolute inset-0 bg-gradient-to-br from-navy-900/90 via-navy-800/85 to-navy-700/90"></div>
@@ -108,8 +108,8 @@ const CaseStudies = () => {
 
             <div className="space-y-16">
               {/* Case Study 1 */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                <div className="h-full">
                   <div className="flex items-center mb-6">
                     <div className="w-16 h-16 bg-gradient-to-br from-pink-500 to-rose-600 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">
                       SM
@@ -119,13 +119,15 @@ const CaseStudies = () => {
                       <p className="text-gold-600 font-medium">Romance Author • "Hearts Entwined"</p>
                     </div>
                   </div>
-                  
+
                   <div className="mb-6">
                     <Quote className="w-8 h-8 text-gold-500 mb-4" />
                     <p className="text-gray-600 text-lg italic leading-relaxed">
-                      "I was selling maybe 15 copies a month and felt invisible in the romance market. 
-                      Author Glide not only tripled my sales but helped me understand my readers. 
-                      The Amazon ads strategy they developed was a game-changer."
+                      "I was selling maybe 15 copies a month and felt invisible in the romance market.
+                      Author Glide not only tripled my sales but helped me understand my readers.
+                      The Amazon ads strategy they developed was a game-changer. The team's expertise
+                      in romance marketing and their personalized approach made all the difference in
+                      transforming my author career."
                     </p>
                   </div>
 
@@ -151,33 +153,44 @@ const CaseStudies = () => {
                     </div>
                     <div className="flex items-center">
                       <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                      <span className="text-gray-700">Featured on 12 romance book blogs</span>
+                      <span className="text-gray-700">Featured on 12 romance book blogs and podcasts</span>
+                    </div>
+                    <div className="flex items-center">
+                      <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
+                      <span className="text-gray-700">Secured recurring monthly revenue stream</span>
                     </div>
                   </div>
                 </div>
 
-                <div className="card p-8 bg-gradient-to-br from-pink-50 to-red-50">
+                <div className="card p-8 bg-gradient-to-br from-pink-50 to-red-50 h-full">
                   <h4 className="text-xl font-bold text-navy-900 mb-6">Campaign Strategy</h4>
                   <div className="space-y-4">
                     <div className="flex items-start">
                       <Target className="w-5 h-5 text-gold-500 mt-1 mr-3" />
                       <div>
                         <h5 className="font-semibold text-navy-900">Targeted Amazon Ads</h5>
-                        <p className="text-sm text-gray-600">Focused on romance keywords and competitor targeting</p>
+                        <p className="text-sm text-gray-600">Focused on romance keywords and competitor targeting with sophisticated keyword research and bid optimization</p>
                       </div>
                     </div>
                     <div className="flex items-start">
                       <Users className="w-5 h-5 text-gold-500 mt-1 mr-3" />
                       <div>
                         <h5 className="font-semibold text-navy-900">Reader Magnet Campaign</h5>
-                        <p className="text-sm text-gray-600">Free novella to build email list rapidly</p>
+                        <p className="text-sm text-gray-600">Free novella strategy to build email list rapidly and create a sustainable reader funnel for future releases</p>
                       </div>
                     </div>
                     <div className="flex items-start">
                       <Star className="w-5 h-5 text-gold-500 mt-1 mr-3" />
                       <div>
                         <h5 className="font-semibold text-navy-900">Review Strategy</h5>
-                        <p className="text-sm text-gray-600">Coordinated launch with beta readers and ARC team</p>
+                        <p className="text-sm text-gray-600">Coordinated launch with beta readers and ARC team to generate authentic early reviews and social proof</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start">
+                      <BookOpen className="w-5 h-5 text-gold-500 mt-1 mr-3" />
+                      <div>
+                        <h5 className="font-semibold text-navy-900">Genre Positioning</h5>
+                        <p className="text-sm text-gray-600">Strategic category selection and romance sub-genre targeting to maximize visibility and discoverability</p>
                       </div>
                     </div>
                   </div>
@@ -185,9 +198,9 @@ const CaseStudies = () => {
               </div>
 
               {/* Case Study 2 */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div className="order-2 lg:order-1">
-                  <div className="card p-8 bg-gradient-to-br from-blue-50 to-indigo-50">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                <div className="order-2 lg:order-1 h-full">
+                  <div className="card p-8 bg-gradient-to-br from-blue-50 to-indigo-50 h-full">
                     <h4 className="text-xl font-bold text-navy-900 mb-6">Timeline & Results</h4>
                     <div className="space-y-4">
                       <div className="flex items-center">
@@ -197,7 +210,7 @@ const CaseStudies = () => {
                             <span className="font-medium">Month 1-2</span>
                             <span className="text-sm text-gray-600">Foundation</span>
                           </div>
-                          <div className="text-sm text-gray-600">Website optimization, Amazon setup</div>
+                          <div className="text-sm text-gray-600">Website optimization, Amazon setup, and comprehensive market analysis</div>
                         </div>
                       </div>
                       <div className="flex items-center">
@@ -207,7 +220,7 @@ const CaseStudies = () => {
                             <span className="font-medium">Month 3-4</span>
                             <span className="text-sm text-gray-600">Launch</span>
                           </div>
-                          <div className="text-sm text-gray-600">Ad campaigns, PR outreach</div>
+                          <div className="text-sm text-gray-600">Multi-platform ad campaigns, targeted PR outreach, and influencer partnerships</div>
                         </div>
                       </div>
                       <div className="flex items-center">
@@ -217,14 +230,24 @@ const CaseStudies = () => {
                             <span className="font-medium">Month 5-6</span>
                             <span className="text-sm text-gray-600">Scale</span>
                           </div>
-                          <div className="text-sm text-gray-600">Bestseller status achieved</div>
+                          <div className="text-sm text-gray-600">Bestseller status achieved and sustainable marketing momentum established</div>
+                        </div>
+                      </div>
+                      <div className="flex items-center">
+                        <TrendingUp className="w-5 h-5 text-gold-500 mr-3" />
+                        <div className="flex-1">
+                          <div className="flex justify-between">
+                            <span className="font-medium">Month 7+</span>
+                            <span className="text-sm text-gray-600">Growth</span>
+                          </div>
+                          <div className="text-sm text-gray-600">Continued optimization and preparation for sequel marketing campaigns</div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div className="order-1 lg:order-2">
+                <div className="order-1 lg:order-2 h-full">
                   <div className="flex items-center mb-6">
                     <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">
                       MT
@@ -234,12 +257,14 @@ const CaseStudies = () => {
                       <p className="text-gold-600 font-medium">Thriller Author • "Silent Witness"</p>
                     </div>
                   </div>
-                  
+
                   <div className="mb-6">
                     <Quote className="w-8 h-8 text-gold-500 mb-4" />
                     <p className="text-gray-600 text-lg italic leading-relaxed">
-                      "After years of struggling to get noticed in the thriller market, Author Glide helped me find my readers. 
-                      Their approach to Amazon advertising and social media was methodical and incredibly effective."
+                      "After years of struggling to get noticed in the thriller market, Author Glide helped me find my readers.
+                      Their approach to Amazon advertising and social media was methodical and incredibly effective. The data-driven
+                      strategies they implemented not only increased my visibility but also helped me understand my audience better
+                      than I ever thought possible."
                     </p>
                   </div>
 
@@ -267,13 +292,17 @@ const CaseStudies = () => {
                       <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
                       <span className="text-gray-700">Secured agent representation for next book</span>
                     </div>
+                    <div className="flex items-center">
+                      <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
+                      <span className="text-gray-700">Established author platform with 5,000+ followers</span>
+                    </div>
                   </div>
                 </div>
               </div>
 
               {/* Case Study 3 */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                <div className="h-full">
                   <div className="flex items-center mb-6">
                     <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-pink-600 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">
                       ER
@@ -283,12 +312,14 @@ const CaseStudies = () => {
                       <p className="text-gold-600 font-medium">Fantasy Author • "The Crystal Wars Trilogy"</p>
                     </div>
                   </div>
-                  
+
                   <div className="mb-6">
                     <Quote className="w-8 h-8 text-gold-500 mb-4" />
                     <p className="text-gray-600 text-lg italic leading-relaxed">
-                      "I went from having a hobby to running a full-time author business. The comprehensive approach 
-                      Author Glide took wasn't just about marketing one book—they helped me build a sustainable career."
+                      "I went from having a hobby to running a full-time author business. The comprehensive approach
+                      Author Glide took wasn't just about marketing one book—they helped me build a sustainable career.
+                      Their long-term vision and strategic planning gave me the confidence to leave my day job and pursue
+                      writing full-time. The results speak for themselves."
                     </p>
                   </div>
 
@@ -316,23 +347,31 @@ const CaseStudies = () => {
                       <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
                       <span className="text-gray-700">Left day job to write full-time</span>
                     </div>
+                    <div className="flex items-center">
+                      <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
+                      <span className="text-gray-700">Developed passive income streams from backlist</span>
+                    </div>
                   </div>
                 </div>
 
-                <div className="card p-8 bg-gradient-to-br from-purple-50 to-pink-50">
+                <div className="card p-8 bg-gradient-to-br from-purple-50 to-pink-50 h-full">
                   <h4 className="text-xl font-bold text-navy-900 mb-6">Long-term Strategy</h4>
                   <div className="space-y-4">
                     <div className="border-l-4 border-gold-500 pl-4">
                       <h5 className="font-semibold text-navy-900">Series Marketing</h5>
-                      <p className="text-sm text-gray-600">Coordinated launch strategy across three books</p>
+                      <p className="text-sm text-gray-600">Coordinated launch strategy across three books with cross-promotion and reader funnel optimization</p>
                     </div>
                     <div className="border-l-4 border-gold-500 pl-4">
                       <h5 className="font-semibold text-navy-900">Community Building</h5>
-                      <p className="text-sm text-gray-600">Facebook group grew to 3,000+ active fantasy fans</p>
+                      <p className="text-sm text-gray-600">Facebook group grew to 3,000+ active fantasy fans with regular engagement and book clubs</p>
                     </div>
                     <div className="border-l-4 border-gold-500 pl-4">
                       <h5 className="font-semibold text-navy-900">Brand Development</h5>
-                      <p className="text-sm text-gray-600">Professional author website and consistent branding</p>
+                      <p className="text-sm text-gray-600">Professional author website and consistent branding across all platforms and marketing materials</p>
+                    </div>
+                    <div className="border-l-4 border-gold-500 pl-4">
+                      <h5 className="font-semibold text-navy-900">Revenue Diversification</h5>
+                      <p className="text-sm text-gray-600">Multiple income streams including audiobooks, merchandise, and premium reader experiences</p>
                     </div>
                   </div>
                 </div>

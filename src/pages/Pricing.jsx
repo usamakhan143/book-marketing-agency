@@ -34,9 +34,9 @@ const Pricing = () => {
         <section className="relative section-padding overflow-hidden min-h-[400px] lg:min-h-[500px]">
           {/* Background Image */}
           <div className="absolute inset-0">
-            <img 
-              src="https://images.pexels.com/photos/7876656/pexels-photo-7876656.jpeg?auto=compress&cs=tinysrgb&w=1600" 
-              alt="Professional business financial analysis and planning"
+            <img
+              src="https://images.pexels.com/photos/7433837/pexels-photo-7433837.jpeg?auto=compress&cs=tinysrgb&w=1600"
+              alt="Professionals reviewing financial graphs and charts during a meeting"
               className="w-full h-full object-cover object-center"
             />
             <div className="absolute inset-0 bg-gradient-to-br from-navy-900/90 via-navy-800/85 to-navy-700/90"></div>
@@ -129,7 +129,7 @@ const Pricing = () => {
                   </div>
                   <h3 className="text-2xl font-bold text-navy-900 mb-2">Starter</h3>
                   <div className="flex items-baseline justify-center mb-4">
-                    <span className="text-4xl font-bold text-navy-900">$1,497</span>
+                    <span className="text-4xl font-bold text-navy-900">$997</span>
                     <span className="ml-2 text-gray-600">one-time</span>
                   </div>
                   <p className="text-gray-600">Perfect for first-time authors ready to launch professionally</p>
@@ -180,16 +180,16 @@ const Pricing = () => {
                   <div className="w-16 h-16 bg-gradient-to-br from-gold-400 to-gold-600 rounded-2xl mx-auto mb-4 flex items-center justify-center">
                     <TrendingUp className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold mb-2">Professional</h3>
+                  <h3 className="text-2xl font-bold text-white mb-2">Professional</h3>
                   <div className="flex items-baseline justify-center mb-4">
-                    <span className="text-4xl font-bold text-gold-400">$2,997</span>
+                    <span className="text-4xl font-bold text-gold-400">$2,497</span>
                     <span className="ml-2 text-gray-300">one-time</span>
                   </div>
                   <p className="text-gray-300">Comprehensive marketing for serious authors</p>
                 </div>
 
                 <div className="space-y-4 mb-8">
-                  <h4 className="font-semibold flex items-center">
+                  <h4 className="font-semibold text-white flex items-center">
                     <Target className="w-5 h-5 text-gold-400 mr-2" />
                     Everything in Starter, plus:
                   </h4>
@@ -212,7 +212,7 @@ const Pricing = () => {
                 </div>
 
                 <div className="mb-6">
-                  <h4 className="font-semibold mb-3">Perfect for:</h4>
+                  <h4 className="font-semibold text-white mb-3">Perfect for:</h4>
                   <ul className="text-sm text-gray-300 space-y-1">
                     <li>• Authors serious about building their career</li>
                     <li>• Writers with multiple books or series</li>
@@ -233,7 +233,7 @@ const Pricing = () => {
                   </div>
                   <h3 className="text-2xl font-bold text-navy-900 mb-2">Elite</h3>
                   <div className="flex items-baseline justify-center mb-4">
-                    <span className="text-4xl font-bold text-navy-900">$5,997</span>
+                    <span className="text-4xl font-bold text-navy-900">$4,997</span>
                     <span className="ml-2 text-gray-600">one-time</span>
                   </div>
                   <p className="text-gray-600">Premium service for bestseller-focused authors</p>

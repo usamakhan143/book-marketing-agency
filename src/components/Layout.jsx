@@ -414,14 +414,18 @@ const Layout = ({ children }) => {
                   transition={{ duration: 0.6, delay: 0.2 }}
                   viewport={{ once: true }}
                 >
-                  {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map((link, index) => (
-                    <a 
-                      key={link}
-                      href="#" 
+                  {[
+                    { name: 'Privacy Policy', href: '/privacy-policy' },
+                    { name: 'Terms & Conditions', href: '/terms-and-conditions' },
+                    { name: 'Cookie Policy', href: '/cookie-policy' }
+                  ].map((link, index) => (
+                    <Link
+                      key={link.name}
+                      to={link.href}
                       className="text-gray-400 hover:text-gold-400 transition-colors duration-200 text-sm"
                     >
-                      {link}
-                    </a>
+                      {link.name}
+                    </Link>
                   ))}
                 </motion.div>
               </div>

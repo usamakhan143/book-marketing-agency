@@ -146,9 +146,9 @@ const FAQ = () => {
         <section className="relative section-padding overflow-hidden min-h-[400px] lg:min-h-[500px]">
           {/* Background Image */}
           <div className="absolute inset-0">
-            <img 
-              src="https://images.pexels.com/photos/7735626/pexels-photo-7735626.jpeg?auto=compress&cs=tinysrgb&w=1600" 
-              alt="Professional consultation and customer support meeting"
+            <img
+              src="https://images.pexels.com/photos/8292809/pexels-photo-8292809.jpeg?auto=compress&cs=tinysrgb&w=1600"
+              alt="Professional consultation meeting in bright modern office setting"
               className="w-full h-full object-cover object-center"
             />
             <div className="absolute inset-0 bg-gradient-to-br from-navy-900/90 via-navy-800/85 to-navy-700/90"></div>
