@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import SkipNavigation from './SkipNavigation';
+import EnhancedCustomCursor from './EnhancedCustomCursor';
 import { 
   Menu, 
   X, 
@@ -42,7 +44,7 @@ const Layout = ({ children }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 40);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -54,38 +56,71 @@ const Layout = ({ children }) => {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Enhanced Navigation */}
-      <motion.nav 
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled ? 'nav-glass shadow-xl' : 'bg-transparent'
+    <div className="min-h-screen bg-white max-w-full overflow-x-hidden">
+      <SkipNavigation />
+
+      {/* Topbar with Gradient - Scrolls away */}
+      <motion.div
+        className="absolute top-0 left-0 right-0 z-50 bg-gradient-to-r from-navy-900 via-navy-800 to-navy-700 text-white py-2 overflow-hidden w-full max-w-full"
+        style={{ width: '100vw', maxWidth: '100vw' }}
+        initial={{ y: -50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.4 }}
+      >
+        <div className="header-container">
+          <div className="flex items-center justify-center text-center px-2">
+            <motion.div
+              className="flex items-center space-x-1 sm:space-x-2 max-w-full"
+              initial={{ scale: 0.8 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <div className="w-3 h-3 sm:w-4 sm:h-4 bg-gradient-to-r from-gold-400 to-gold-500 rounded-full animate-pulse flex-shrink-0"></div>
+              <span className="font-medium text-gray-100 text-xs sm:text-sm truncate">
+                <span className="hidden xs:inline">🚀 </span>Transform Your Book Marketing •
+                <span className="text-gold-400 font-semibold"> Join 500+ Authors</span>
+                <span className="hidden sm:inline"> • Free Consultation Available</span>
+              </span>
+              <div className="w-3 h-3 sm:w-4 sm:h-4 bg-gradient-to-r from-gold-400 to-gold-500 rounded-full animate-pulse flex-shrink-0"></div>
+            </motion.div>
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Enhanced Navigation - Sticky on scroll */}
+      <motion.nav
+        className={`fixed left-0 right-0 transition-all duration-300 overflow-hidden w-full max-w-full ${
+          isScrolled
+            ? 'top-0 z-50 nav-glass shadow-xl'
+            : 'nav-with-topbar z-40 bg-white/80 backdrop-blur-sm'
         }`}
+        style={{ width: '100vw', maxWidth: '100vw' }}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6 }}
       >
         <div className="header-container">
-          <div className="flex justify-between items-center py-3 lg:py-4">
+          <div className="flex justify-between items-center py-3 lg:py-4 w-full min-w-0 max-w-full overflow-hidden">
             {/* Enhanced Logo */}
-            <Link to="/" className="flex items-center space-x-2 group mr-4 lg:mr-6">
+            <Link to="/" className="flex items-center space-x-1 sm:space-x-2 group mr-1 sm:mr-2 lg:mr-6 flex-1 min-w-0 max-w-full overflow-hidden">
               <motion.div
-                className="relative"
+                className="relative flex-shrink-0"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <div className="w-10 lg:w-12 h-10 lg:h-12 bg-gradient-to-br from-navy-900 via-navy-700 to-navy-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
-                  <BookOpen className="w-5 lg:w-6 h-5 lg:h-6 text-gold-500" />
+                <div className="w-8 sm:w-10 lg:w-12 h-8 sm:h-10 lg:h-12 bg-gradient-to-br from-navy-900 via-navy-700 to-navy-600 rounded-lg lg:rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
+                  <BookOpen className="w-4 sm:w-5 lg:w-6 h-4 sm:h-5 lg:h-6 text-gold-500" />
                 </div>
                 <motion.div
-                  className="absolute -top-1 -right-1 w-3 lg:w-4 h-3 lg:h-4 bg-gold-500 rounded-full"
+                  className="absolute -top-0.5 sm:-top-1 -right-0.5 sm:-right-1 w-2.5 sm:w-3 lg:w-4 h-2.5 sm:h-3 lg:h-4 bg-gold-500 rounded-full"
                   animate={{ scale: [1, 1.2, 1] }}
                   transition={{ duration: 2, repeat: Infinity }}
                 >
-                  <Sparkles className="w-2 lg:w-3 h-2 lg:h-3 text-white m-0.5" />
+                  <Sparkles className="w-1.5 sm:w-2 lg:w-3 h-1.5 sm:h-2 lg:h-3 text-white m-0.5" />
                 </motion.div>
               </motion.div>
-              <div className="flex flex-col">
-                <span className="text-lg lg:text-xl xl:text-2xl font-bold font-serif text-navy-900 group-hover:text-gold-600 transition-colors duration-300">
+              <div className="flex flex-col min-w-0 flex-shrink overflow-hidden">
+                <span className="text-sm sm:text-base lg:text-xl xl:text-2xl font-bold text-navy-900 group-hover:text-gold-600 transition-colors duration-300 truncate whitespace-nowrap">
                   Author<span className="text-gold-500">Glide</span>
                 </span>
                 <span className="text-xs text-gray-500 font-medium tracking-wide hidden xl:block">
@@ -138,23 +173,34 @@ const Layout = ({ children }) => {
             {/* Mobile menu button */}
             <motion.button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden p-3 rounded-xl bg-gray-100 hover:bg-gray-200 text-navy-700 transition-colors duration-200"
+              className="lg:hidden p-1.5 sm:p-2 lg:p-3 rounded-lg sm:rounded-xl bg-gray-100 hover:bg-gray-200 text-navy-700 transition-colors duration-200 flex-shrink-0"
               whileTap={{ scale: 0.95 }}
             >
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isMenuOpen ? <X className="w-5 sm:w-6 h-5 sm:h-6" /> : <Menu className="w-5 sm:w-6 h-5 sm:h-6" />}
             </motion.button>
           </div>
 
           {/* Enhanced Mobile Navigation */}
           <AnimatePresence>
             {isMenuOpen && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
-                exit={{ opacity: 0, height: 0 }}
-                className="lg:hidden overflow-hidden"
-              >
-                <div className="glass-effect rounded-2xl p-6 m-4 mt-0">
+              <>
+                {/* Backdrop */}
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="lg:hidden fixed inset-0 bg-black/20 backdrop-blur-sm z-40"
+                  onClick={() => setIsMenuOpen(false)}
+                />
+
+                {/* Menu Container */}
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: 'auto' }}
+                  exit={{ opacity: 0, height: 0 }}
+                  className="lg:hidden overflow-hidden relative z-50"
+                >
+                <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 mx-4 mt-2 mb-4">
                   <div className="space-y-3">
                     {navigation.map((item, index) => {
                       const Icon = item.icon;
@@ -197,14 +243,15 @@ const Layout = ({ children }) => {
                     </motion.div>
                   </div>
                 </div>
-              </motion.div>
+                </motion.div>
+              </>
             )}
           </AnimatePresence>
         </div>
       </motion.nav>
 
       {/* Main Content */}
-      <main className="pt-20">
+      <main id="main-content" className="pt-20 lg:pt-24" tabIndex={-1}>
         {children}
       </main>
 
@@ -227,7 +274,7 @@ const Layout = ({ children }) => {
                   transition={{ duration: 0.6 }}
                   viewport={{ once: true }}
                 >
-                  <h3 className="text-3xl font-bold mb-4">
+                  <h3 className="text-3xl font-bold mb-4 text-white">
                     Stay Updated with Author Marketing Tips
                   </h3>
                   <p className="text-gray-300 mb-8 text-lg">
@@ -265,7 +312,7 @@ const Layout = ({ children }) => {
                     <BookOpen className="w-6 h-6 text-white" />
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-2xl font-bold font-serif">
+                    <span className="text-2xl font-bold">
                       Author<span className="text-gold-500">Glide</span>
                     </span>
                     <span className="text-sm text-gray-300">Book Marketing Experts</span>
@@ -433,6 +480,18 @@ const Layout = ({ children }) => {
           </div>
         </div>
       </footer>
+
+      {/* Enhanced Custom Cursor */}
+      <EnhancedCustomCursor
+        size={32}
+        dotSize={8}
+        colors={{
+          default: '#f59e0b',
+          hover: '#fbbf24',
+          accent: '#102a43'
+        }}
+        animationSpeed={300}
+      />
     </div>
   );
 };

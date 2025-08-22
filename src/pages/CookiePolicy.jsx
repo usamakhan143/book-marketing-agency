@@ -31,7 +31,7 @@ const CookiePolicy = () => {
       
       <div className="min-h-screen">
         {/* Hero Section */}
-        <section className="relative section-padding overflow-hidden min-h-[400px] lg:min-h-[500px]">
+        <section className="relative pt-16 pb-[5.25rem] lg:pt-24 lg:pb-24 overflow-hidden min-h-[400px] lg:min-h-[500px]">
           {/* Background Image */}
           <div className="absolute inset-0">
             <img 
@@ -47,7 +47,7 @@ const CookiePolicy = () => {
               <div className="w-20 h-20 bg-gradient-to-br from-gold-400 to-gold-600 rounded-2xl mx-auto mb-6 flex items-center justify-center shadow-xl">
                 <Cookie className="w-10 h-10 text-white" />
               </div>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold mb-6 text-white">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-white">
                 Cookie Policy
               </h1>
               <p className="text-xl lg:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed">
@@ -55,7 +55,7 @@ const CookiePolicy = () => {
               </p>
               
               {/* Breadcrumb Navigation */}
-              <nav className="flex items-center justify-center space-x-2 text-gray-300">
+              <nav className="flex items-center justify-center space-x-2 text-gray-300 mb-5 md:mb-0">
                 <Home className="w-5 h-5" />
                 <span className="text-base font-medium">Home</span>
                 <ChevronRight className="w-5 h-5" />

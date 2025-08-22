@@ -1,5 +1,7 @@
 import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { useScrollReveal, useScrollRevealMultiple } from '../hooks/useScrollReveal';
 import { 
   Home, 
   ChevronRight, 
@@ -19,6 +21,26 @@ import {
 } from 'lucide-react';
 
 const FAQ = () => {
+  // Initialize scroll reveal for multiple elements
+  useScrollRevealMultiple('.scroll-reveal');
+  useScrollRevealMultiple('.scroll-reveal-left');
+  useScrollRevealMultiple('.scroll-reveal-right');
+  useScrollRevealMultiple('.scroll-reveal-scale');
+
+  const fadeInUp = {
+    initial: { opacity: 0, y: 60 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.6 }
+  };
+
+  const staggerContainer = {
+    animate: {
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
   const faqCategories = [
     {
       title: "Getting Started",
@@ -142,49 +164,218 @@ const FAQ = () => {
       />
       
       <div className="min-h-screen">
-        {/* Hero Section */}
-        <section className="relative section-padding overflow-hidden min-h-[400px] lg:min-h-[500px]">
-          {/* Background Image */}
-          <div className="absolute inset-0">
-            <img
-              src="https://images.pexels.com/photos/8292809/pexels-photo-8292809.jpeg?auto=compress&cs=tinysrgb&w=1600"
-              alt="Professional consultation meeting in bright modern office setting"
-              className="w-full h-full object-cover object-center"
+        {/* Enhanced Hero Section */}
+        <section className="relative pt-12 pb-[5.25rem] md:pt-16 md:pb-20 lg:pt-20 lg:pb-24 overflow-hidden min-h-[600px] md:min-h-[650px] lg:min-h-[750px]">
+          {/* Animated Background Gradient */}
+          <motion.div
+            className="absolute inset-0 bg-gradient-to-br from-navy-950 via-navy-900 to-navy-800"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.0 }}
+          />
+
+          {/* Floating Geometric Shapes */}
+          <div className="absolute inset-0 overflow-hidden">
+            <motion.div
+              className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-gold-400/20 to-gold-600/20 rounded-full blur-xl"
+              animate={{
+                x: [0, 30, 0],
+                y: [0, -20, 0],
+                scale: [1, 1.1, 1]
+              }}
+              transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
             />
-            <div className="absolute inset-0 bg-gradient-to-br from-navy-900/90 via-navy-800/85 to-navy-700/90"></div>
+            <motion.div
+              className="absolute top-40 right-20 w-24 h-24 bg-gradient-to-br from-navy-400/30 to-navy-600/30 rounded-xl blur-lg"
+              animate={{
+                x: [0, -20, 0],
+                y: [0, 15, 0],
+                rotate: [0, 180, 360]
+              }}
+              transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+            />
+            <motion.div
+              className="absolute bottom-32 left-1/4 w-20 h-20 bg-gradient-to-br from-gold-300/25 to-gold-500/25 rounded-full blur-lg"
+              animate={{
+                x: [0, 25, 0],
+                y: [0, -30, 0],
+                scale: [1, 0.8, 1]
+              }}
+              transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+            />
+            <motion.div
+              className="absolute top-1/3 right-1/3 w-16 h-16 bg-gradient-to-br from-navy-500/20 to-navy-700/20 rounded-lg blur-md"
+              animate={{
+                x: [0, -15, 0],
+                y: [0, 20, 0],
+                rotate: [0, -90, 0]
+              }}
+              transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+            />
           </div>
-          
-          <div className="container-custom relative z-10 flex items-center justify-center min-h-[400px] lg:min-h-[500px]">
-            <div className="text-center max-w-4xl mx-auto">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold mb-6 text-white">
+
+          {/* Interactive Background Pattern */}
+          <motion.div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `radial-gradient(circle at 25% 25%, rgba(251, 191, 36, 0.1) 0%, transparent 50%),
+                               radial-gradient(circle at 75% 75%, rgba(16, 42, 67, 0.2) 0%, transparent 50%),
+                               linear-gradient(135deg, rgba(251, 191, 36, 0.05) 0%, rgba(16, 42, 67, 0.05) 100%)`
+            }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 2, delay: 0.5 }}
+          />
+
+          <div className="container-custom relative z-10 flex items-center justify-center min-h-[600px] md:min-h-[650px] lg:min-h-[750px]">
+            <div className="text-center max-w-5xl mx-auto">
+
+              {/* Interactive Badge */}
+              <motion.div
+                className="inline-flex items-center space-x-2 bg-gradient-to-r from-gold-500/20 to-gold-400/20 backdrop-blur-sm border border-gold-400/30 rounded-full px-4 py-2 md:px-6 md:py-3 mb-6 md:mb-8"
+                initial={{ opacity: 0, y: 30, scale: 0.8 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                whileHover={{ scale: 1.05, y: -5 }}
+              >
+                <motion.div
+                  className="w-3 h-3 bg-gradient-to-r from-gold-400 to-gold-500 rounded-full"
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                />
+                <span className="text-gold-300 font-medium text-xs sm:text-sm lg:text-base">
+                  Common Questions, Clear Answers
+                </span>
+              </motion.div>
+
+              {/* Main Title with Gradient Text */}
+              <motion.h1
+                className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 md:mb-8 bg-gradient-to-r from-white via-gold-200 to-gold-400 bg-clip-text text-transparent leading-tight"
+                initial={{ opacity: 0, y: 100, scale: 0.8 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{
+                  duration: 1.2,
+                  delay: 0.4,
+                  ease: [0.215, 0.61, 0.355, 1],
+                  type: "spring",
+                  damping: 20,
+                  stiffness: 100
+                }}
+                whileHover={{ scale: 1.02 }}
+              >
                 FAQ
-              </h1>
-              <p className="text-xl lg:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed">
-                Everything you need to know about working with Author Glide to transform your book marketing.
-              </p>
-              
-              {/* Breadcrumb Navigation */}
-              <nav className="flex items-center justify-center space-x-2 text-gray-300">
-                <Home className="w-5 h-5" />
-                <span className="text-base font-medium">Home</span>
-                <ChevronRight className="w-5 h-5" />
-                <span className="text-base text-white font-semibold">FAQ</span>
-              </nav>
+              </motion.h1>
+
+              {/* Enhanced Description */}
+              <motion.div
+                className="mb-10"
+                initial={{ opacity: 0, y: 60 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 1.0,
+                  delay: 0.7,
+                  ease: [0.25, 0.46, 0.45, 0.94]
+                }}
+              >
+                <p className="text-lg md:text-xl lg:[font-size:1.1rem] text-gray-300 mb-4 md:mb-6 max-w-4xl mx-auto leading-relaxed">
+                  Everything you need to know about working with Author Glide to transform your book marketing.
+                </p>
+                <motion.p
+                  className="text-base md:text-lg lg:[font-size:1.1rem] text-gold-200 max-w-3xl mx-auto leading-relaxed font-medium"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.8, delay: 1.2 }}
+                >
+                  We believe in transparency. Here are honest answers to the questions we hear most often from authors.
+                </motion.p>
+              </motion.div>
+
+              {/* Interactive Statistics */}
+              <motion.div
+                className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-12 max-w-4xl mx-auto"
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1.0 }}
+              >
+                {[
+                  { number: "30+", label: "FAQs Answered", icon: HelpCircle },
+                  { number: "24/7", label: "Support Available", icon: MessageSquare },
+                  { number: "100%", label: "Transparency", icon: CheckCircle }
+                ].map((stat, index) => (
+                  <motion.div
+                    key={index}
+                    className="group bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 rounded-xl md:rounded-2xl p-4 md:p-6 hover:border-gold-400/50 transition-all duration-300"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 1.2 + index * 0.1 }}
+                    whileHover={{
+                      scale: 1.05,
+                      y: -10,
+                      boxShadow: "0 20px 40px rgba(251, 191, 36, 0.2)"
+                    }}
+                  >
+                    <div className="w-12 h-12 bg-gradient-to-br from-gold-400 to-gold-600 rounded-xl mx-auto mb-4 flex items-center justify-center shadow-lg">
+                      <stat.icon className="w-6 h-6 text-white" />
+                    </div>
+                    <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2 group-hover:text-gold-300 transition-colors">
+                      {stat.number}
+                    </div>
+                    <div className="text-gray-400 font-medium text-sm md:text-base">{stat.label}</div>
+                  </motion.div>
+                ))}
+              </motion.div>
+
+              {/* Enhanced Breadcrumb Navigation */}
+              <motion.nav
+                className="flex items-center justify-center space-x-3 bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20 max-w-fit mx-auto mb-5 md:mb-0"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.8,
+                  delay: 1.4,
+                  ease: [0.25, 0.46, 0.45, 0.94]
+                }}
+                whileHover={{ scale: 1.05 }}
+              >
+                <motion.div
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <Home className="w-5 h-5 text-gold-400" />
+                </motion.div>
+                <span className="text-gray-300 font-medium">Home</span>
+                <ChevronRight className="w-4 h-4 text-gray-400" />
+                <span className="text-white font-semibold">FAQ</span>
+              </motion.nav>
             </div>
           </div>
+
+          {/* Bottom Wave Effect */}
+          <motion.div
+            className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white via-white/80 to-transparent"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.0, delay: 1.6 }}
+          />
         </section>
 
         {/* Quick Stats */}
         <section className="section-padding bg-gray-50">
           <div className="container-custom">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl lg:text-4xl font-serif font-bold text-navy-900 mb-6">
+            <motion.div
+              className="text-center mb-16 scroll-reveal"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl lg:text-4xl font-bold text-navy-900 mb-6 animate-fade-in">
                 Common Questions, Clear Answers
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto animate-fade-in animation-delay-200">
                 We believe in transparency. Here are honest answers to the questions we hear most often from authors.
               </p>
-            </div>
+            </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
               <div className="text-center">
@@ -229,7 +420,7 @@ const FAQ = () => {
                       <div className="w-12 h-12 bg-gradient-to-br from-gold-400 to-gold-600 rounded-xl mr-4 flex items-center justify-center">
                         <CategoryIcon className="w-6 h-6 text-white" />
                       </div>
-                      <h2 className="text-3xl font-serif font-bold text-navy-900">{category.title}</h2>
+                      <h2 className="text-3xl font-bold text-navy-900">{category.title}</h2>
                     </div>
 
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -254,7 +445,7 @@ const FAQ = () => {
         <section className="section-padding bg-gray-50">
           <div className="container-custom">
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl lg:text-4xl font-serif font-bold text-navy-900 mb-6">
+              <h2 className="text-3xl lg:text-4xl font-bold text-navy-900 mb-6">
                 Still Have Questions?
               </h2>
               <p className="text-xl text-gray-600 mb-8">
@@ -306,7 +497,7 @@ const FAQ = () => {
         {/* CTA Section */}
         <section className="gradient-bg text-white section-padding">
           <div className="container-custom text-center">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Ready to Get Started?
             </h2>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">

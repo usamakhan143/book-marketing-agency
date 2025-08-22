@@ -116,7 +116,7 @@ const Home = () => {
 
                 {/* Responsive Headline */}
                 <div className="animate-fade-in animation-delay-400">
-                  <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black leading-[0.9] lg:leading-[0.85]">
+                  <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl 2xl:text-5rem font-black leading-[0.9] lg:leading-[0.85]">
                     <span className="block text-white">Transform Your</span>
                     <span className="block bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600 bg-clip-text text-transparent animate-scale-in-bounce animation-delay-600">
                       Literary Dreams
@@ -600,8 +600,8 @@ const Home = () => {
                 Real stories from real authors who achieved their publishing dreams with our help
               </p>
             </motion.div>
-            
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8">
               {[
                 {
                   name: "Sarah Mitchell",
@@ -634,9 +634,9 @@ const Home = () => {
                   avatar: "ER"
                 }
               ].map((story, index) => (
-                <motion.div 
-                  key={index} 
-                  className="testimonial-card group"
+                <motion.div
+                  key={index}
+                  className="testimonial-card group mb-16 lg:mb-0"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.2 }}
@@ -1130,7 +1130,7 @@ const Home = () => {
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 items-center">
               {[
                 { name: "Google Partner", icon: Target },
                 { name: "Facebook Marketing Partner", icon: Users },
