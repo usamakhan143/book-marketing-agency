@@ -1,6 +1,12 @@
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import AnimatedDivider from '../components/AnimatedDivider';
+import LightweightHeroBackground from '../components/LightweightHeroBackground';
+import EnhancedCTA from '../components/EnhancedCTA';
+import DynamicStats from '../components/DynamicStats';
+import { useScrollReveal, useScrollRevealMultiple } from '../hooks/useScrollReveal';
 import {
   BookOpen,
   Target,
@@ -30,6 +36,16 @@ import {
 } from 'lucide-react';
 
 const Home = () => {
+  // Initialize scroll reveal for multiple elements
+  const aboutSectionRef = useScrollReveal();
+  const aboutCardsRef = useScrollReveal();
+
+  // Initialize scroll reveal for multiple similar elements (call hooks at component level)
+  useScrollRevealMultiple('.scroll-reveal');
+  useScrollRevealMultiple('.scroll-reveal-left');
+  useScrollRevealMultiple('.scroll-reveal-right');
+  useScrollRevealMultiple('.scroll-reveal-scale');
+
   const schema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -75,190 +91,182 @@ const Home = () => {
         schema={schema}
       />
       
-      <div className="min-h-screen">
+      <div className="min-h-screen smooth-scroll">
         
-        {/* 1. Enhanced Hero Section */}
-        <section className="hero-gradient text-white min-h-screen flex items-center relative overflow-hidden dark-section pt-16 md:pt-0">
-          {/* Animated Background Elements */}
-          <div className="absolute inset-0">
-            <div className="absolute top-20 left-10 w-32 h-32 bg-gold-500/20 rounded-full blur-xl opacity-40"></div>
-            <div className="absolute bottom-20 right-20 w-48 h-48 bg-blue-500/20 rounded-full blur-2xl opacity-30"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gold-500/10 rounded-full blur-3xl opacity-20"></div>
-          </div>
+        {/* 1. Optimized Interactive Hero Section */}
+        <section className="relative min-h-screen flex items-center overflow-hidden dark-section">
+          {/* Optimized Lightweight Background */}
+          <LightweightHeroBackground />
 
-          <div className="container-custom relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              
-              {/* Hero Content */}
-              <div className="text-left">
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8 }}
-                  className="mb-6"
-                >
-                  <span className="inline-flex items-center px-4 py-2 bg-gold-500/20 backdrop-blur-md rounded-full text-gold-300 font-medium border border-gold-500/30">
-                    <Sparkles className="w-4 h-4 mr-2" />
-                    #1 Book Marketing Agency
-                  </span>
-                </motion.div>
+          <div className="container-custom relative z-20 py-16 lg:py-20">
+            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-12 gap-8 lg:gap-12 items-center max-w-7xl mx-auto">
 
-                <motion.h1 
-                  className="text-5xl lg:text-7xl font-bold mb-8 leading-tight"
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
-                >
-                  Transform Your
-                  <motion.span 
-                    className="text-gradient block"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.8, delay: 0.5 }}
+              {/* Optimized Hero Content */}
+              <div className="lg:col-span-1 xl:col-span-7 text-left space-y-6 lg:space-y-8">
+                {/* Optimized Badge */}
+                <div className="animate-fade-in animation-delay-200">
+                  <div className="inline-flex items-center px-4 py-2 lg:px-6 lg:py-3 bg-gold-500/20 backdrop-blur-md rounded-full border border-gold-400/30 text-gold-300 font-semibold text-sm shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer group">
+                    <Sparkles className="w-4 h-4 lg:w-5 lg:h-5 mr-2 lg:mr-3 group-hover:rotate-12 transition-transform duration-300" />
+                    <span className="text-white">
+                      #1 Book Marketing Agency
+                    </span>
+                    <div className="ml-2 lg:ml-3 w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
+                  </div>
+                </div>
+
+                {/* Responsive Headline */}
+                <div className="animate-fade-in animation-delay-400">
+                  <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black leading-[0.9] lg:leading-[0.85]">
+                    <span className="block text-white">Transform Your</span>
+                    <span className="block bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600 bg-clip-text text-transparent animate-scale-in-bounce animation-delay-600">
+                      Literary Dreams
+                    </span>
+                    <span className="block text-white">Into Reality</span>
+                  </h1>
+                </div>
+
+                {/* Optimized Description */}
+                <p className="text-lg sm:text-xl lg:text-2xl text-gray-300 leading-relaxed max-w-2xl animate-fade-in animation-delay-500 font-light">
+                  Join the <span className="text-gold-400 font-semibold">500+ successful authors</span> who transformed their publishing dreams into <span className="text-emerald-400 font-semibold">bestseller reality</span> with our proven strategies.
+                </p>
+
+                {/* Simplified CTA Section */}
+                <div className="flex flex-col sm:flex-row gap-4 lg:gap-6 animate-fade-in animation-delay-700">
+                  <EnhancedCTA
+                    to="/contact"
+                    variant="primary"
+                    size="lg"
+                    icon={Rocket}
+                    endIcon={ArrowRight}
+                    className="group"
                   >
-                    Literary Dreams
-                  </motion.span>
-                  Into Reality
-                </motion.h1>
-
-                <motion.p 
-                  className="text-xl lg:text-2xl text-gray-300 mb-10 leading-relaxed max-w-2xl"
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.4 }}
-                >
-                  Professional book marketing strategies that have helped 500+ authors reach bestseller status. 
-                  Your success story starts here.
-                </motion.p>
-
-                <motion.div
-                  className="flex flex-col sm:flex-row gap-6 justify-start"
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.6 }}
-                >
-                  <Link to="/contact" className="btn-primary text-lg px-8 py-4 group">
-                    <Rocket className="w-5 h-5 mr-2 group-hover:animate-pulse" />
                     Launch My Campaign
-                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                  </Link>
+                  </EnhancedCTA>
 
-                  <Link to="/contact" className="btn-ghost group">
-                    <Mail className="w-5 h-5 mr-2" />
-                    Free Consultation
-                  </Link>
-                </motion.div>
+                  <EnhancedCTA
+                    to="/contact"
+                    variant="secondary"
+                    size="lg"
+                    icon={Mail}
+                    className="group"
+                  >
+                    Free Strategy Call
+                  </EnhancedCTA>
+                </div>
 
-                {/* Trust Indicators */}
-                <motion.div
-                  className="mt-12 flex flex-wrap items-center justify-start gap-8"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.8, delay: 0.8 }}
-                >
-                  <div className="flex items-center space-x-2">
-                    <div className="flex -space-x-2">
+                {/* Simplified Trust Indicators */}
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 lg:gap-8 animate-fade-in animation-delay-900">
+                  {/* Author Avatars */}
+                  <div className="flex items-center">
+                    <div className="flex -space-x-2 lg:-space-x-3">
                       {[
                         'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=100',
                         'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=100',
                         'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=100',
-                        'https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=100',
-                        'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=100'
+                        'https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=100'
                       ].map((img, i) => (
-                        <img key={i} src={img} alt={`Happy author ${i + 1}`} className="w-8 h-8 rounded-full border-2 border-white object-cover" />
+                        <img
+                          key={i}
+                          src={img}
+                          alt={`Success story ${i + 1}`}
+                          className="w-10 h-10 lg:w-12 lg:h-12 rounded-full border-2 border-white/20 object-cover hover:scale-110 transition-transform duration-300 shadow-lg"
+                        />
                       ))}
                     </div>
-                    <span className="text-sm text-gray-300">500+ Happy Authors</span>
+                    <div className="ml-3 lg:ml-4">
+                      <div className="text-white font-semibold text-sm lg:text-base">500+ Success Stories</div>
+                      <div className="text-gold-400 text-xs lg:text-sm">Join our author community</div>
+                    </div>
                   </div>
-                  
-                  <div className="flex items-center space-x-2">
-                    <div className="flex text-gold-400">
+
+                  {/* Rating */}
+                  <div className="flex items-center">
+                    <div className="flex text-gold-400 mr-2 lg:mr-3">
                       {[1,2,3,4,5].map((i) => (
-                        <Star key={i} className="w-4 h-4 fill-current" />
+                        <Star key={i} className="w-4 h-4 lg:w-5 lg:h-5 fill-current" />
                       ))}
                     </div>
-                    <span className="text-sm text-gray-300">4.9/5 Rating</span>
+                    <div>
+                      <div className="text-white font-semibold text-sm lg:text-base">4.9/5 Rating</div>
+                      <div className="text-gray-400 text-xs lg:text-sm">200+ reviews</div>
+                    </div>
                   </div>
-                </motion.div>
+                </div>
               </div>
 
-              {/* Hero Banner Image */}
-              <motion.div
-                className="relative flex justify-center lg:justify-end mb-8 lg:mb-0"
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1, delay: 0.3 }}
-              >
-                <div className="relative pr-8 pt-8">
-                  <div className="relative rounded-3xl shadow-2xl overflow-hidden">
-                    <img
-                      src="https://images.pexels.com/photos/9159067/pexels-photo-9159067.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                      alt="Successful author working with books and laptop"
-                      className="w-full h-80 lg:h-96 object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-tr from-navy-900/60 via-navy-800/40 to-transparent"></div>
+              {/* Optimized Stats Showcase */}
+              <div className="lg:col-span-1 xl:col-span-5 mt-8 lg:mt-0">
+                <div className="relative animate-scale-in animation-delay-300">
+                  {/* Optimized Glassmorphism Container */}
+                  <div className="relative bg-white/5 backdrop-blur-xl rounded-2xl lg:rounded-3xl border border-white/10 shadow-xl p-5 lg:p-6 hover:bg-white/10 transition-all duration-500">
+                    {/* Content */}
+                    <div className="text-center mb-6 lg:mb-8">
+                      <div className="inline-flex items-center px-3 py-1.5 bg-gradient-to-r from-emerald-500/20 to-blue-500/20 rounded-full border border-white/20 mb-3">
+                        <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse mr-2"></div>
+                        <span className="text-emerald-300 text-sm font-semibold">Live Data</span>
+                      </div>
+                      <h3 className="text-2xl lg:text-3xl font-bold text-white mb-2 bg-gradient-to-r from-white via-gold-200 to-white bg-clip-text text-transparent">
+                        Success Metrics
+                      </h3>
+                      <p className="text-gray-300 text-sm lg:text-base leading-relaxed max-w-sm mx-auto">
+                        Real results from <span className="text-gold-400 font-semibold">real campaigns</span>
+                      </p>
+                    </div>
 
-                    {/* Overlay Stats */}
-                    <div className="absolute bottom-6 left-6 right-6">
-                      <div className="bg-white/95 backdrop-blur-md rounded-2xl p-6 shadow-xl">
-                        <div className="grid grid-cols-3 gap-4 text-center">
-                          <div>
-                            <div className="text-2xl font-bold text-navy-900 flex items-center justify-center">
-                              <TrendingUp className="w-5 h-5 mr-1 text-gold-500" />
-                              342%
-                            </div>
-                            <div className="text-sm text-gray-600">Sales Growth</div>
-                          </div>
-                          <div>
-                            <div className="text-2xl font-bold text-navy-900 flex items-center justify-center">
-                              <Users className="w-5 h-5 mr-1 text-blue-500" />
-                              2.5M+
-                            </div>
-                            <div className="text-sm text-gray-600">Readers Reached</div>
-                          </div>
-                          <div>
-                            <div className="text-2xl font-bold text-navy-900 flex items-center justify-center">
-                              <Target className="w-5 h-5 mr-1 text-green-500" />
-                              89%
-                            </div>
-                            <div className="text-sm text-gray-600">Success Rate</div>
-                          </div>
-                        </div>
+                    {/* Compact & Professional Stats Component */}
+                    <div className="stats-container">
+                      <DynamicStats className="mb-6 lg:mb-8" />
+                    </div>
+
+                    {/* Compact Achievement Badges */}
+                    <div className="grid grid-cols-2 gap-3">
+                      <div className="text-center p-3 bg-emerald-500/10 rounded-xl border border-emerald-500/20">
+                        <Award className="w-5 h-5 lg:w-6 lg:h-6 text-emerald-400 mx-auto mb-2" />
+                        <div className="text-white font-semibold text-sm">Industry Leader</div>
+                        <div className="text-emerald-400 text-xs">5+ Years</div>
+                      </div>
+                      <div className="text-center p-3 bg-blue-500/10 rounded-xl border border-blue-500/20">
+                        <Trophy className="w-5 h-5 lg:w-6 lg:h-6 text-blue-400 mx-auto mb-2" />
+                        <div className="text-white font-semibold text-sm">Proven Results</div>
+                        <div className="text-blue-400 text-xs">89% Success</div>
                       </div>
                     </div>
                   </div>
-
-                  {/* Achievement Badge */}
-                  <div className="absolute top-4 right-4 w-16 h-16 bg-gold-500 rounded-2xl flex items-center justify-center shadow-xl z-10">
-                    <Award className="w-8 h-8 text-white" />
-                  </div>
                 </div>
-              </motion.div>
+              </div>
             </div>
           </div>
+
+          {/* Simplified Scroll Indicator */}
+          <div className="absolute bottom-6 lg:bottom-8 left-1/2 transform -translate-x-1/2 z-20">
+            <div className="w-1 h-8 bg-white/30 rounded-full animate-pulse" />
+          </div>
         </section>
+
+        {/* Animated Divider */}
+        <AnimatedDivider type="wave" color="gold" />
 
         {/* 2. About Highlight Section */}
         <section className="section-padding bg-white">
           <div className="container-custom">
-            <motion.div 
-              className="text-center mb-16"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
+            <div
+              ref={aboutSectionRef}
+              className="text-center mb-16 scroll-reveal"
             >
-              <span className="text-gold-600 font-semibold text-lg mb-2 block">Why Choose Author Glide?</span>
-              <h2 className="text-4xl lg:text-5xl font-bold text-navy-900 mb-6">
+              <span className="text-gold-600 font-semibold text-lg mb-2 block animate-fade-in animation-delay-200">Why Choose Author Glide?</span>
+              <h2 className="text-4xl lg:text-5xl font-bold text-navy-900 mb-6 animate-fade-in animation-delay-400">
                 Your Publishing Success Partners
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                With 5+ years of experience and 500+ successful campaigns, we know what it takes 
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto animate-fade-in animation-delay-600">
+                With 5+ years of experience and 500+ successful campaigns, we know what it takes
                 to turn your book into a bestseller.
               </p>
-            </motion.div>
+            </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <div
+              ref={aboutCardsRef}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 xl:gap-12"
+            >
               {[
                 {
                   icon: Shield,
@@ -276,62 +284,68 @@ const Home = () => {
                   icon: Heart,
                   title: "Author-First Approach",
                   description: "We understand authors because we are authors. Your success is our mission.",
-                  stat: "95% Client Retention"
+                  stat: "95+ Client Retention"
                 }
               ].map((feature, index) => {
                 const Icon = feature.icon;
                 return (
-                  <motion.div
+                  <div
                     key={index}
-                    className="text-center group"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.2 }}
-                    viewport={{ once: true }}
+                    className={`
+                      relative text-center group card-interactive hover-lift-light scroll-reveal-scale
+                      bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500
+                      border border-gray-100 hover:border-gold-200
+                      p-8 lg:p-10 xl:p-12 space-y-6 overflow-hidden
+                      animation-delay-${(index + 1) * 200}
+                    `}
                   >
-                    <div className="mb-8 flex flex-col items-center">
-                      <div className="w-24 h-24 bg-gradient-to-br from-gold-400 to-gold-600 rounded-2xl flex items-center justify-center shadow-xl group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110 mb-4">
-                        <Icon className="w-12 h-12 text-white" />
+                    <div className="relative z-10 flex flex-col items-center space-y-4">
+                      <div className="icon-wrapper w-20 h-20 lg:w-24 lg:h-24 bg-gradient-to-br from-gold-400 to-gold-600 rounded-2xl flex items-center justify-center shadow-xl group-hover:shadow-2xl transition-all duration-500 group-hover:scale-110 hover-glow-gold">
+                        <Icon className="w-10 h-10 lg:w-12 lg:h-12 text-white" />
                       </div>
-                      <div className="bg-navy-900 text-white text-sm font-bold px-4 py-2 rounded-full">
+                      <div className="bg-navy-900 text-white text-sm font-bold px-6 py-3 rounded-full hover-scale transition-all duration-300 cursor-pointer shadow-lg">
                         {feature.stat}
                       </div>
                     </div>
-                    <h3 className="text-2xl font-bold text-navy-900 mb-4">{feature.title}</h3>
-                    <p className="text-gray-600 text-lg">{feature.description}</p>
-                  </motion.div>
+
+                    <div className="relative z-10 space-y-4">
+                      <h3 className="text-2xl lg:text-3xl font-bold text-navy-900 group-hover:text-gold-600 transition-colors duration-300 leading-tight">
+                        {feature.title}
+                      </h3>
+                      <p className="text-gray-600 text-lg lg:text-xl group-hover:text-gray-700 transition-colors duration-300 leading-relaxed max-w-sm mx-auto">
+                        {feature.description}
+                      </p>
+                    </div>
+
+                    {/* Elegant hover effect */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-gold-50/50 to-gold-100/30 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                    {/* Subtle border glow */}
+                    <div className="absolute inset-0 rounded-3xl border-2 border-gold-400 opacity-0 group-hover:opacity-30 scale-95 group-hover:scale-100 transition-all duration-500" />
+                  </div>
                 );
               })}
             </div>
           </div>
         </section>
 
+        {/* Animated Divider */}
+        <AnimatedDivider type="geometric" color="navy" />
+
         {/* 3. Services Overview */}
         <section className="section-padding bg-gray-50">
           <div className="container-custom">
-            <motion.div 
-              className="text-center mb-16"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <span className="text-gold-600 font-semibold text-lg mb-2 block">Complete Marketing Solutions</span>
-              <h2 className="text-4xl lg:text-5xl font-bold text-navy-900 mb-6">
+            <div className="text-center mb-16 scroll-reveal">
+              <span className="text-gold-600 font-semibold text-lg mb-2 block animate-fade-in animation-delay-200">Complete Marketing Solutions</span>
+              <h2 className="text-4xl lg:text-5xl font-bold text-navy-900 mb-6 animate-fade-in animation-delay-400">
                 Everything You Need to Succeed
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto animate-fade-in animation-delay-600">
                 From strategy to execution, we handle every aspect of your book marketing campaign
               </p>
-            </motion.div>
+            </div>
             
-            <motion.div 
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-              variants={staggerContainer}
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-            >
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
                   icon: Target,
@@ -372,32 +386,34 @@ const Home = () => {
               ].map((service, index) => {
                 const Icon = service.icon;
                 return (
-                  <motion.div 
-                    key={index} 
-                    className="card-premium p-8 group hover-lift"
-                    variants={fadeInUp}
+                  <div
+                    key={index}
+                    className={`card-premium p-8 group hover-lift-light card-interactive scroll-reveal-scale animation-delay-${(index + 1) * 100}`}
                   >
-                    <div className="icon-wrapper bg-gradient-to-br from-gold-400 to-gold-600 text-white mb-6 group-hover:scale-110 transition-transform duration-300 mx-auto">
-                      <Icon className="w-8 h-8" />
+                    <div className="icon-wrapper bg-gradient-to-br from-gold-400 to-gold-600 text-white mb-6 group-hover:scale-110 transition-transform duration-300 mx-auto hover-glow-gold">
+                      <Icon className="w-8 h-8 animate-heartbeat" />
                     </div>
-                    
-                    <h3 className="text-xl font-bold text-navy-900 mb-4 text-center">{service.title}</h3>
-                    <p className="text-gray-600 mb-6 text-center">{service.description}</p>
-                    
+
+                    <h3 className="text-xl font-bold text-navy-900 mb-4 text-center group-hover:text-gold-600 transition-colors duration-300">{service.title}</h3>
+                    <p className="text-gray-600 mb-6 text-center group-hover:text-gray-700 transition-colors duration-300">{service.description}</p>
+
                     <ul className="space-y-2">
                       {service.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center text-sm text-gray-600">
-                          <CheckCircle className="w-4 h-4 text-gold-500 mr-2 flex-shrink-0" />
+                        <li key={idx} className="flex items-center text-sm text-gray-600 hover:text-gray-700 transition-colors duration-200">
+                          <CheckCircle className="w-4 h-4 text-gold-500 mr-2 flex-shrink-0 icon-bounce" />
                           {feature}
                         </li>
                       ))}
                     </ul>
-                  </motion.div>
+                  </div>
                 );
               })}
-            </motion.div>
+            </div>
           </div>
         </section>
+
+        {/* Animated Divider */}
+        <AnimatedDivider type="dots" color="gold" />
 
         {/* 4. Process - How It Works */}
         <section className="section-padding bg-white">
